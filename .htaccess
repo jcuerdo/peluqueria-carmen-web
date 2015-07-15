@@ -1,0 +1,9 @@
+RewriteBase /
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} !www\.peluqueria-carmen\.es$ [NC]
+RewriteCond %{HTTP_HOST} (.*)\.peluqueria-carmen\.es$ [NC]
+RewriteRule ^(.*)$ http://peluqueria-carmen.es/%1/$1 [P,L]
+
+RewriteRule ^inicio  index.php?p=index
+RewriteRule ^([A-Za-z0-9-]+)/?$   index.php?p=$1
